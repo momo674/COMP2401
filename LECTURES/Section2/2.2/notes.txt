@@ -1,0 +1,33 @@
+stack overflow error issue is because we are accessing array out of bounds
+
+in c, it does not check for out of bounds error in arrays, meaing
+char array[5];
+
+calling
+array[5] will still work, but it messes up our memory.
+
+capacity -> max amount of itmes allowed in arrray
+size -> how many current items in array.
+
+compiler error -> gcc cant compile code
+runtime error -> we can compile code and get a.out, but when we run the output file, it crashes.
+
+
+sizeof return the number of bytes.
+    -> 1 int = 4 bytes
+    -> 1 char = 1 byte
+
+
+
+Strings Slides:
+strings are arrays of char,
+
+they must be terminated by the NULL character
+
+printf and scanf are variadic functions, they can take a non-fixed number of arguments
+
+in c, strings are passed by refference always.
+
+value 0 is null character, but '\0' is a char of the value 0. just like how '\n' is new line, there is a value behind it. 'J' == 73 i think?
+
+myStr[3] = 0; //same as myStr[3] = '\0'
