@@ -1,0 +1,43 @@
+Pointers are variables, they store a memory address as its value
+
+memory address could be another vairbale or a block of dynamically allocated memory
+
+
+reasons to use Pointers
+they are small fixed size variable (always 8 bytes)
+
+&adress operator
+
+ALL POINTERS ARE 8 BYTES IN 64 BIT ARCHITECTURE
+
+when we say char *pValue,
+
+* means data in memory
+
+if we have a pointer pointing to a struct, we use ->
+
+
+when we do a pointer pointing to an array, the name of an arry is the same as its address.
+
+
+we can point to an arry, and when we incrment the pointer, it goes to the next element in array
+
+int[] x = [2,4,6,8,10,12,14];
+
+int *pointer = x;
+pointer is pointing to element 0 index.
+pointer++ = next item
+
+once i increment a pointer, will it forever be stuck at that index?
+ANSWER -> if we increment a pointer which points to an array, that array will forver be pointing at that address, unless we set the pointer back to it array's inital item's adress
+
+ptr++;    // Pointer moves to the next int position (as if it was an array)
+++ptr;    // Pointer moves to the next int position (as if it was an array)
+++*ptr;   // The value pointed at by ptr is incremented
+++(*ptr); // The value pointed at by ptr is incremented
+++*(ptr); // The value pointed at by ptr is incremented
+*ptr++;   // Pointer moves to the next int position (as if it was an array). But returns the old content
+(*ptr)++; // The value pointed at by ptr is incremented
+*(ptr)++; // Pointer moves to the next int position (as if it was an array). But returns the old content
+*++ptr;   // Pointer moves to the next int position, and then gets accessed, with your code, segfault
+*(++ptr); // Pointer moves to the next int position, and then gets accessed, with your code, segfault
