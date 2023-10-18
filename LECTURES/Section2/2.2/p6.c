@@ -15,6 +15,7 @@ struct StudentType {
     char stuNumber[12];
     float gpa;
 };
+
 void printStudent(struct StudentType);
 int main() {
     struct PersonType gertrude;
