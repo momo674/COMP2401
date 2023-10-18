@@ -47,7 +47,7 @@ int main() {
     printStudent(matilda);
     printStudent(joe);
 
-    struct StudentType 2401[NUM_STU];
+    //struct StudentType 2401[NUM_STU];
 
     return 0;
 }
