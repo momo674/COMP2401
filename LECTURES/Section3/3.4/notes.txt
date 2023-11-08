@@ -1,0 +1,22 @@
+no dummy nodes
+
+we will make a Nodetype Struct that has
+ Node next;
+ (whatever type) data;
+
+ ex:
+
+ typedef struct Student {
+  char name[MAX_STR];
+  char major[MAX_STR];
+} StudentType;
+
+typedef struct Node{
+    StudentType *data;
+    struct Node *next;
+} NodeType;
+
+
+our list is basically;
+
+NodeType* head --> NodeType
