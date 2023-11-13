@@ -3,6 +3,8 @@
 #include <string.h>
 
 #define MAX_STR 32
+#define C_OK 0
+#define C_NOTOK 1
 
 typedef struct StudentStruct
 {
@@ -14,6 +16,7 @@ typedef struct StudentStruct
 typedef struct NodeStruct 
 {
     struct NodeStruct* next;
+    struct NodeStruct* prev;
     Student* data;
 
 } Node;
@@ -85,6 +88,7 @@ void addInList(int index, Node** list, Student* element)
     Node* elementAsNode = malloc(sizeof(Student));
     elementAsNode->data = element;
     elementAsNode->next = NULL;
+    elementAsNode->prev = NULL;
 
     while (currNode != NULL)
     {
@@ -110,9 +114,14 @@ void addInList(int index, Node** list, Student* element)
     else
     {
         prevNode->next = elementAsNode;
+        elementAsNode->prev = prevNode;
     }
 
     elementAsNode->next = currNode;
+    if (currNode != NULL) 
+    {
+        currNode->prev = elementAsNode;
+    }
 
 }
 
@@ -148,6 +157,17 @@ void displayList(Node* list)
 {
 
     Node* currNode = list;
+    Node* prevNode = NULL;
+    printf("FORWARD\n");
+    while (currNode != NULL)
+    {
+        printf("%s ", currNode->data->name);
+        currNode = currNode->next;
+    }
+    printf("\n");
+
+    printf("BACKWARDS\n");
+    currNode = prevNode;
     while (currNode != NULL)
     {
         printf("%s ", currNode->data->name);
@@ -157,7 +177,7 @@ void displayList(Node* list)
     return;
 
 }
-//study
+
 void cleanUp(Node* list)
 {
     Node* prevNode;
