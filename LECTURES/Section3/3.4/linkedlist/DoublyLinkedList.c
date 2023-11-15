@@ -145,9 +145,27 @@ void removeInList(int index, Node** list)
         prevNode = currNode;
         currNode = currNode->next;
 
+        pos++;
+
     }
-    Node* tmp = currNode->next;
-    prevNode->next = tmp;
+        
+    if (currNode == NULL) {
+        return;
+    }
+
+    if (prevNode == NULL) {
+        *list = currNode->next;
+    }
+    else {
+        prevNode->next = currNode->next;
+    }
+
+    if (currNode->next != NULL) {
+        currNode->next->prev = prevNode;
+    }
+
+    free(currNode->data);
+    free(currNode);
     
 
 
