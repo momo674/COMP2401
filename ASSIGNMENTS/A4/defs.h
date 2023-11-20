@@ -70,4 +70,22 @@ void printMenu(int*);
 void loadPatronData(RestaurantType*);
 void loadResData(RestaurantType*);
 
+void initPatronArray(PatronArrayType *arr);
+void addPatron(PatronArrayType *arr, char *n);
+int findPatron(PatronArrayType *arr, int id, PatronType **p);
+void printPatrons(PatronArrayType *arr);
+void cleanupPatronArray(PatronArrayType *arr);
 
+void initResvList(ResvListType *list);
+void initResvTime(ResvTimeType **rt, int yr, int mth, int day, int hr, int min);
+void initResv(ResvType **r, PatronType *p, ResvTimeType *rt);
+int lessThan(ResvTimeType *r1, ResvTimeType *r2);
+void addResv(ResvListType *list, ResvType *r);
+void printReservations(ResvListType *list);
+void cleanupResvList(ResvListType *list);
+
+void initRestaurant(RestaurantType *r, char *n);
+int validateResvTime(int yr, int mth, int day, int hr, int min);
+void createResv(RestaurantType *r, int pId, int yr, int mth, int day, int hr, int min);
+void printResByPatron(RestaurantType *r, int id);
+void cleanupRestaurant(RestaurantType *r);

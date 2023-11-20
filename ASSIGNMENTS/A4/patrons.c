@@ -40,12 +40,11 @@ int findPatron(PatronArrayType *arr, int id, PatronType **p){
 
 void printPatrons(PatronArrayType *arr){
 
-    printf("PATRONS\n");
+    printf("REGISTERED PATRONS at Christine's Bistro:\n");
 
     for (int i = 0; i < arr->size; i++) {
-
-        printf("ID: %d NAME: %s\n", arr->elements[i].id, arr->elements[i].name);
-
+        printf("Patron #%d %s\n", arr->elements[i].id, arr->elements[i].name);
+        
     }
 
 }

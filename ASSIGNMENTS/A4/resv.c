@@ -167,3 +167,4 @@ void cleanupResvList(ResvListType *list) {
 
     currNode = nextNode;
   }
+}
