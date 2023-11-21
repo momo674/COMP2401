@@ -2,12 +2,12 @@
 
 void initRestaurant(RestaurantType *r, char *n) {
     strcpy(r->name, n);
-    initResvList(r->reservations);
-    initPatronArray(r->patrons);
+    initResvList(&(r->reservations));
+    initPatronArray(&(r->patrons));
 }
 
 int validateResvTime(int yr, int mth, int day, int hr, int min) {
-    if (yr < 2023 || (mth > 12) || (mth < 1) || (day > 31) || (day < 1) || (hr > 24) || (hr < 1) || (min > 60) || (min < 1)) {
+    if (yr < 2023 || (mth > 12) || (mth < 1) || (day > 31) || (day < 1) || (hr > 24) || (hr < 1) || (min > 60) || (min < 0)) {
         return C_NOK;
     }
 
@@ -21,7 +21,8 @@ void createResv(RestaurantType *r, int pId, int yr, int mth, int day, int hr, in
         printf("ERROR: Date %d-%d-%d or time %d:%d is invalid\n", yr,mth,day,hr,min);
     }
     PatronType* newPatron;
-    int patron_check = findPatron(r->patrons.elements, pId, &newPatron);
+    int patron_check = findPatron(&(r->patrons), pId, &newPatron);
+    
 
     if (patron_check == C_NOK) {
         printf("ERROR: Patron id %d was not found\n", pId);
@@ -37,7 +38,7 @@ void createResv(RestaurantType *r, int pId, int yr, int mth, int day, int hr, in
     ResvType* newRes;
     initResv(&newRes, newPatron, newResvTimeType);
 
-    addResv(r->reservations, newRes);
+    addResv(&(r->reservations), newRes);
 }
 
 void printResByPatron(RestaurantType *r, int id) {
@@ -57,8 +58,8 @@ void printResByPatron(RestaurantType *r, int id) {
 }
 
 void cleanupRestaurant(RestaurantType *r) {
-    cleanupResvList(r->reservations);
-    cleanupPatronArray(r->patrons);
-    free(r->name);
-    free(r);
+    cleanupResvList(&(r->reservations));
+    cleanupPatronArray(&(r->patrons));
+    //free(r->name);
+    
 }

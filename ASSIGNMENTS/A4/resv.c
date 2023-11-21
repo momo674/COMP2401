@@ -101,7 +101,7 @@ void addResv(ResvListType *list, ResvType *r) {
 
         int swap = lessThan(toAdd, inList);
 
-        if (swap == 0) {
+        if (swap == 1) {
             break;
         }
         else {
@@ -110,6 +110,8 @@ void addResv(ResvListType *list, ResvType *r) {
         }
     }
 
+    newNode->data->id = list->nextId;
+    list->nextId++;
     if (prevNode == NULL) {
         list->head = newNode;
     }
@@ -129,8 +131,8 @@ void printReservation(ResvType *r) {
     //add padding for zero at day,month, minutes, hours
     //ex. 8 should be 08
     printf("%d  :: ", r->id);
-    printf("%d-%d-%d ",r->resvTime->year, r->resvTime->month, r->resvTime->day);
-    printf("@ %d:%d :: ", r->resvTime->hours, r->resvTime->minutes);
+    printf("%d-%02d-%02d ",r->resvTime->year, r->resvTime->month, r->resvTime->day);
+    printf("@ %02d:%02d :: ", r->resvTime->hours, r->resvTime->minutes);
     printf("%s\n", r->patron->name);
 }
 

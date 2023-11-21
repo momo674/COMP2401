@@ -15,16 +15,16 @@ void addPatron(PatronArrayType *arr, char *n) {
     strcpy(item.name, n);
 
     arr->elements[arr->size] = item;
-    ((*(arr)).size)++;
+    arr->size++;
     ((*(arr)).nextId)++;
 
 }
 
 int findPatron(PatronArrayType *arr, int id, PatronType **p){
-
     for (int i = 0; i < arr->size; i++) {
-        
+
         if ((arr->elements)[i].id == id) {
+            
             PatronType saved = arr->elements[i];
             *p = arr->elements + i;
                     
@@ -39,13 +39,11 @@ int findPatron(PatronArrayType *arr, int id, PatronType **p){
 }
 
 void printPatrons(PatronArrayType *arr){
-
-    printf("REGISTERED PATRONS at Christine's Bistro:\n");
-
     for (int i = 0; i < arr->size; i++) {
         printf("Patron #%d %s\n", arr->elements[i].id, arr->elements[i].name);
         
     }
+   
 
 }
 

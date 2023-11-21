@@ -5,8 +5,39 @@
 
 int main()
 {
+  RestaurantType local;
+  initRestaurant(&local, "Christine's Bistro");
+  loadPatronData(&local);
+  loadResData(&local);
+  int choice = -1;
+  printMenu(&choice);
 
-  return(0);
+  while (choice != 0) {
+    if (choice == 1) {
+      printf("REGISTERED PATRONS AT %s:\n", local.name);
+      printPatrons(&(local.patrons));
+      choice = -1;
+    }
+
+    else if (choice == 2) {
+      printReservations(&(local.reservations));
+      choice = -1;
+    }
+
+    else if (choice == 3) {
+      int id = -1;
+      printf("Enter patron id: ");
+      scanf("%d", &id);
+      printResByPatron(&local, id);
+      choice = -1;
+    }
+
+    choice = -1;
+    printMenu(&choice);
+
+  }  
+  cleanupRestaurant(&local);
+  return 0;
 }
 
 void printMenu(int *choice)
@@ -24,6 +55,11 @@ void printMenu(int *choice)
   scanf("%d", &c);
 
   if (c == 0) {
+    *choice = c;
+    return;
+  }
+
+  if (c == 1) {
     *choice = c;
     return;
   }
