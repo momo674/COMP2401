@@ -81,6 +81,7 @@ void initResvTime(ResvTimeType **rt, int yr, int mth, int day, int hr, int min);
 void initResv(ResvType **r, PatronType *p, ResvTimeType *rt);
 int lessThan(ResvTimeType *r1, ResvTimeType *r2);
 void addResv(ResvListType *list, ResvType *r);
+void printReservation(ResvType *r);
 void printReservations(ResvListType *list);
 void cleanupResvList(ResvListType *list);
 

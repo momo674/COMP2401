@@ -1,8 +1,8 @@
 system = a huge application (not an oeprating system.)
 
 distrubuted system -> software system that executes over multiple physical hosts
-- each host has different file systems, different cups, diffferent processing everything.
-- if they wan to communicate with eaxch other, they need an intanet or an internet to communicate.
+- each host has different file systems, different cpus, diffferent processing everything.
+- if they want to communicate with each other, they need an intranet or an internet to communicate.
 ex: mutliple banks, atms have access to YOUR bank info. they are all different systems but they communicate.
 
 

@@ -28,6 +28,7 @@ int main()
       int id = -1;
       printf("Enter patron id: ");
       scanf("%d", &id);
+      printf("RESERVATIONS BY PATRON AT %s:\n", local.name);
       printResByPatron(&local, id);
       choice = -1;
     }
@@ -39,7 +40,12 @@ int main()
   cleanupRestaurant(&local);
   return 0;
 }
-
+/*
+  Function:  printMenu
+  Purpose:   Prints menu of options to pick from for resturant.
+       in:   choice - integer passed by reference of decisison.
+       out:  choice - integer passed by reference gets updated.
+*/
 void printMenu(int *choice)
 {
   int c = -1;
