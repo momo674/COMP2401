@@ -4,10 +4,10 @@
 int main()
 {
   system("clear");
-  system("ls -l");
-  printf("\n");
+  system("ls");
+  //printf("\n");
 
-  system("who");
+  //system("who");
 
 }
 

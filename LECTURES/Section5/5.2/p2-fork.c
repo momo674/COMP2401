@@ -14,14 +14,14 @@ int main()
     printf("fork returned %d, this is the child \n", rc);
     for (i=1; i<=24; ++i) {
       printf("The ants go marching *%2d* by *%2d*, hurrah, hurrah, \n", i, i);
-      usleep(500000);
+      //usleep(500000);
     }
   }
   else { // parent process
     printf("fork returned %d, this is the parent \n", rc);
     for (i=1; i<=24; ++i) {
       printf("The ants go marching  %2d  by  %2d , hurrah, hurrah, \n", i, i);
-      usleep(1000000);
+     //usleep(1000000);
     }
   }
 }
