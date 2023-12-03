@@ -1,0 +1,38 @@
+stdin -> connected to the keyboard
+stdout -> connected to display
+stderr -> connected to display
+
+streams:
+    formatted I/O   
+    unformatted I/O fgets()
+
+Input Streams:
+    end of file marker
+
+Stream management:
+    fopen() opens a connection between program and streams
+    fclose() closes
+
+Formatted I/O:
+    fscanf():
+        reads data from a stream into variables according to a format string
+    fprintf():
+        writes data to a stream from variables according to format string
+    
+    *both functions call fread() or fwrite() [unformatted]
+
+    fgets() and fread():
+        both functions read data from a stream into one program variables
+    
+    fwrite():
+        this writes data to a stream from one variable
+
+files are 1d array of bytes
+
+end of file marker:
+    follows the last byte of the file
+    feof - file end of file
+
+file pointer:
+    curr pos in the stream 
+    where the next bvyte we will read or write from

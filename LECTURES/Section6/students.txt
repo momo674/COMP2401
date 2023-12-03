@@ -1,0 +1,5 @@
+harold basket 2.2
+matilda cs 11.9
+joe physics 8.4
+timmy cs 11.7
+amy cogsci 10.1
