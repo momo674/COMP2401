@@ -1,0 +1,1 @@
+paradigms - describes different typoes of programming languages
